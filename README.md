@@ -17,7 +17,7 @@ It then effectively learns concept-prototypes by applying the Concept Regulariza
 Furthermore, to achieve balanced learning over different concepts, we introduce the \textcolor{red}{Concept-based Balanced Memory (\textcolor{red}{CBM})}, which guides SGG models to generate balanced representations for concept-prototypes.
 Finally, we introduce a novel metric, mean Context Recall (mCR@K), as a complement to mean Recall (mR@K), to evaluate the model's performance across concepts (determined by contexts) within the same predicate. 
 Extensive experiments demonstrate the remarkable efficacy of our model-agnostic strategy in enhancing the performance of benchmark models on both VG-SGG and OI-SGG datasets, leading to new state-of-the-art achievements in two key aspects: predicate-level unbiased relation recognition and concept-level compositional generability. 
-<div align=center><img height="400" width="600" src=abstract.png></div>
+<div align=center><img src=abstract.png></div>
 
 ## Framework
 Within our Fine-Grained Predicates Learning (FGPL) framework, shown below, we first construct a Predicate Lattice concerning context information to understand ubiquitous correlations among predicates. Then, utilizing the Predicate Lattice, we develop a Category Discriminating Loss and an Entity Discriminating Loss which help SGG models differentiate hard-to-distinguish predicates.
