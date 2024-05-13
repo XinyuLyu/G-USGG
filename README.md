@@ -41,7 +41,7 @@ The trained models(Motif-MCL) on Predcls\SGCLs\SGDet are released as below.
 
 | Predcls                                                                                                                                                           | SGCLs                                                                                                                                                            | SGDet                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Motif-MCL-Predcls](https://stduestceducn-my.sharepoint.com/:f:/g/personal/202011081621_std_uestc_edu_cn/EvKzNYpi0lRBrw9GpK8GGBMB3s8vMQ0t0N1KqKlvfQPseg?e=eFNrY6) | [Motif-FMCL-SGCLS](https://stduestceducn-my.sharepoint.com/:f:/g/personal/202011081621_std_uestc_edu_cn/EgYUqzzmHGRPtcTcGh7hqOQBupOrijaCcb00jFtLiDAAfg?e=q4Mgrb) | [Motif-MCL-SGDet](https://stduestceducn-my.sharepoint.com/:f:/g/personal/202011081621_std_uestc_edu_cn/EhAXOXoRZaJBtXO_IALmxJ0BmppYCxOhhT7CCNQhWKYeiw?e=wZ5EIP) |
+| [Motif-MCL-Predcls](https://stduestceducn-my.sharepoint.com/:u:/g/personal/202011081621_std_uestc_edu_cn/EW0nkLFzPj9NsY2t0pAZNB8BU1YKaV2bOFBKBImf61N6Cw?e=vlp9pI) | [Motif-FMCL-SGCLS](https://stduestceducn-my.sharepoint.com/:u:/g/personal/202011081621_std_uestc_edu_cn/EcBLVZ7RD85OkyW5y4gVHUMB-kViQR7SOjHWNZXV6IiKeQ?e=QphPrF) | [Motif-MCL-SGDet](https://stduestceducn-my.sharepoint.com/:u:/g/personal/202011081621_std_uestc_edu_cn/EQuuuZMdxw9DriRPMjs5J0sBeGNa0NMXfGb-1ekQxYHx0Q?e=uMONJz) |
 
 ## Help
 Be free to contact me (xinyulyu68@gmail.com) if you have any questions!
@@ -52,7 +52,7 @@ The code is implemented based on [Scene-Graph-Benchmark.pytorch](https://github.
 ## Bibtex
 
 ```
-@inproceedings{sgg:FPGL,
+@inproceedings{sgg:MCL,
   author    = {Xinyu Lyu and
                Lianli Gao and
                Junlin Xie and
