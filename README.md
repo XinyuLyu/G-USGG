@@ -11,16 +11,16 @@ This repository contains code for the paper "[Generalized Unbiased Scene Graph G
 Existing Unbiased Scene Graph Generation (USGG) methods only focus on addressing the predicate-level imbalance that high-frequency classes dominate predictions of rare ones, while overlooking the concept-level imbalance.
 Actually, even if predicates themselves are balanced, there is still a significant concept-imbalance within them due to the long-tailed distribution of contexts (i.e., subject-object combinations). 
 This concept-level imbalance poses a more pervasive and challenging issue compared to the predicate-level imbalance since subject-object pairs are inherently complex in combinations.
-To address the issue, we propose \textbf{M}ulti-\textbf{C}oncept \textbf{L}earning (MCL), a nocel concept-level balanced learning framework orthogonal to existing SGG methods.
+To address the issue, we propose Multi-Concept Learning (MCL), a novel concept-level balanced learning framework orthogonal to existing SGG methods.
 MCL first quantifies the concept-level imbalance across predicates in terms of different amounts of concepts, representing as multiple concept-prototypes within the same class.
 It then effectively learns concept-prototypes by applying the Concept Regularization (CR) technique. 
-Furthermore, to achieve balanced learning over different concepts, we introduce the \textcolor{red}{Concept-based Balanced Memory (\textcolor{red}{CBM})}, which guides SGG models to generate balanced representations for concept-prototypes.
+Furthermore, to achieve balanced learning over different concepts, we introduce the Concept-based Balanced Memory (CBM), which guides SGG models to generate balanced representations for concept-prototypes.
 Finally, we introduce a novel metric, mean Context Recall (mCR@K), as a complement to mean Recall (mR@K), to evaluate the model's performance across concepts (determined by contexts) within the same predicate. 
 Extensive experiments demonstrate the remarkable efficacy of our model-agnostic strategy in enhancing the performance of benchmark models on both VG-SGG and OI-SGG datasets, leading to new state-of-the-art achievements in two key aspects: predicate-level unbiased relation recognition and concept-level compositional generability. 
 <div align=center><img height="600" width="600"  src=abstract.png></div>
 
 ## Framework
-Within our Fine-Grained Predicates Learning (FGPL) framework, shown below, we first construct a Predicate Lattice concerning context information to understand ubiquitous correlations among predicates. Then, utilizing the Predicate Lattice, we develop a Category Discriminating Loss and an Entity Discriminating Loss which help SGG models differentiate hard-to-distinguish predicates.
+WThe Overview of our Multi-Concept Learning (MCL) framework. It contains three parts: Concept-Prototype Construction (CPC), Concept-based Balanced Memory (CBM), and Concept Regularization (CR). The CPC assesses the semantic scales of each predicate from the SGG dataset and then quantifies the semantic scales into different amounts of concept-prototypes within the same predicate. Subsequently, CBM produces the balanced relation representations across different concepts within predicates, enabling the SGG model to equally attend to all concepts. Finally, the CR alleviates the predicate-level semantic overlap while enhancing the discriminability among concept-prototypes.
 <div align=center><img src=framework.png></div>
 
 ## Visualization
