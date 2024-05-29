@@ -26,8 +26,6 @@ WThe Overview of our Multi-Concept Learning (MCL) framework. It contains three p
 ## Visualization
 <div align=center><img  height="600" width="800" src=visual_sp-1.png></div>
 
-## Device
-Experiments of VG-SGG and OI-SGG are trained with an NVIDIA GeForce RTX 3090 GPU and 4 NVIDIA RTX A6000 GPUs, respectively.
 
 ## Dataset
 Follow [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
