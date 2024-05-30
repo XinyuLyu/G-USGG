@@ -2,7 +2,7 @@ export PYTHONPATH=/mnt/hdd1/zhanghaonan/code/code_sgg_lxy/lib/cocoapi:/mnt/hdd1/
 
 export CUDA_VISIBLE_DEVICES=9
 export NUM_GUP=2
-MODEL_NAME="no_p_sub_loss_cs_intra_proto_only_cb_no_freq_no_ctx_no_relnms_predcls_bs8_miter60000_PQLayer_307_mlp4096_parent_loss_sub_loss_rep_loss_neg_05_1024_Motif_9999899_memory10000_mem005_size64_cf09_dv05_SA"
+MODEL_NAME="Motif_MCL"
 NOWTIME=$(date "+%Y-%m-%d-%H-%M-%S")
 echo "Training "${mode}" Nowtime is: "${NOWTIME}
 
