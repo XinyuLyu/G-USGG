@@ -1,4 +1,4 @@
-## Generalized Unbiased Scene Graph Generation
+## Multi-Concept Learning for Scene Graph Generation
 
 ![LICENSE](https://img.shields.io/badge/license-MIT-green)
 [![Python](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/)
@@ -58,7 +58,7 @@ The code is implemented based on [Scene-Graph-Benchmark.pytorch](https://github.
                Yulu Tian and
                Jie Shao and 
                Heng Tao Shen},
-  title     = {Generalized Unbiased Scene Graph Generation},
+  title     = {Multi-Concept Learning for Scene Graph Generation},
   booktitle = {CoRR},
   year      = {2023}
 }
