@@ -39,7 +39,7 @@ The trained models(Motif-MCL) on Predcls\SGCLs\SGDet are released as below.
 
 | Predcls                                                                                                                                                           | SGCLs                                                                                                                                                            | SGDet                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Motif-MCL-Predcls](https://1drv.ms/f/s!Amlnn8hF2cFdgul3oSr1pHfa7eJCKA?e=1czlAO) | [Motif-FMCL-SGCLS](https://1drv.ms/f/s!Amlnn8hF2cFdgul5g5ZxuviLtp5YMA?e=JYhsTy) | [Motif-MCL-SGDet](https://1drv.ms/f/s!Amlnn8hF2cFdgul4LohJW7XzV_1SEw?e=YZKlXA) |
+| [Motif-MCL-Predcls](https://1drv.ms/f/s!Amlnn8hF2cFdgul3oSr1pHfa7eJCKA?e=1czlAO) | [Motif-MCL-SGCLS](https://1drv.ms/f/s!Amlnn8hF2cFdgul5g5ZxuviLtp5YMA?e=JYhsTy) | [Motif-MCL-SGDet](https://1drv.ms/f/s!Amlnn8hF2cFdgul4LohJW7XzV_1SEw?e=YZKlXA) |
 
 ## Help
 Be free to contact me (xinyulyu68@gmail.com) if you have any questions!
