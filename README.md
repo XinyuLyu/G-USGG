@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8)
 
-This repository contains code for the paper "[Generalized Unbiased Scene Graph Generation](https://arxiv.org/pdf/2308.04802)". This code is based on [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch). 
+This repository contains code for the paper "[Multi-Concept Learning for Scene Graph Generation](https://arxiv.org/pdf/2308.04802)". This code is based on [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch). 
 
 ## Abstract
 
