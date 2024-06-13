@@ -1,10 +1,10 @@
-## Generalized Unbiased Scene Graph Generation
+## Multi-Concept Learning for Scene Graph Generation
 
 ![LICENSE](https://img.shields.io/badge/license-MIT-green)
 [![Python](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8)
 
-This repository contains code for the paper "[Generalized Unbiased Scene Graph Generation](https://arxiv.org/pdf/2308.04802)". This code is based on [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch). 
+This repository contains code for the paper "[Multi-Concept Learning for Scene Graph Generation](https://arxiv.org/pdf/2308.04802)". This code is based on [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch). 
 
 ## Abstract
 
@@ -39,7 +39,7 @@ The trained models(Motif-MCL) on Predcls\SGCLs\SGDet are released as below.
 
 | Predcls                                                                                                                                                           | SGCLs                                                                                                                                                            | SGDet                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Motif-MCL-Predcls](https://1drv.ms/u/s!Amlnn8hF2cFdgpxf6Qg_4BXCl2BpgQ?e=st2usV) | [Motif-FMCL-SGCLS](https://1drv.ms/u/s!Amlnn8hF2cFdgpxj9nkO0l3yygnZKQ?e=CA3HsN) | [Motif-MCL-SGDet](https://1drv.ms/u/s!Amlnn8hF2cFdgpxhwUaPkS4bEiOgkA?e=XC2ZVI) |
+| [Motif-MCL-Predcls](https://1drv.ms/f/s!Amlnn8hF2cFdgul3oSr1pHfa7eJCKA?e=1czlAO) | [Motif-MCL-SGCLS](https://1drv.ms/f/s!Amlnn8hF2cFdgul5g5ZxuviLtp5YMA?e=JYhsTy) | [Motif-MCL-SGDet](https://1drv.ms/f/s!Amlnn8hF2cFdgul4LohJW7XzV_1SEw?e=YZKlXA) |
 
 ## Help
 Be free to contact me (xinyulyu68@gmail.com) if you have any questions!
@@ -58,7 +58,7 @@ The code is implemented based on [Scene-Graph-Benchmark.pytorch](https://github.
                Yulu Tian and
                Jie Shao and 
                Heng Tao Shen},
-  title     = {Generalized Unbiased Scene Graph Generation},
+  title     = {Multi-Concept Learning for Scene Graph Generation},
   booktitle = {CoRR},
   year      = {2023}
 }
