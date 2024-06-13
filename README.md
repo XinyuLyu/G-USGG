@@ -31,7 +31,7 @@ WThe Overview of our Multi-Concept Learning (MCL) framework. It contains three p
 Follow [DATASET.md](DATASET.md) for instructions of dataset preprocessing.
 
 ## Train
-Follow the [instructions](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) to install and use the code. Also, we provide scripts for training models with MCL our model (in `scripts/885train_trans.sh`(https://github.com/XinyuLyu/G-USGG/blob/master/885train_trans.sh))
+Follow the [instructions](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch) to install and use the code. Also, we provide scripts for training models with MCL our model (in `scripts/885train_[motifs/penet].sh`(https://github.com/XinyuLyu/G-USGG/blob/master/script))
     
 ## Test
 The trained models(Motif-MCL) on Predcls\SGCLs\SGDet are released as below. 
