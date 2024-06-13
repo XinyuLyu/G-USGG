@@ -11,7 +11,7 @@ from maskrcnn_benchmark.data import get_dataset_statistics
 from maskrcnn_benchmark.modeling.make_layers import make_fc
 from .model_prototype import MemoryBanks, PQLayer, FeedForward, MultiHeadAttention
 from .model_prototype import PQLayer
-from .model_motifs import LSTMContext, FrequencyBias, LSTMContext_mp
+from .model_motifs import LSTMContext, FrequencyBias
 from .utils_prototype import *
 from .utils_relation import layer_init
 from .utils_motifs import obj_edge_vectors, rel_vectors, encode_box_info, nms_overlaps, to_onehot
@@ -40,7 +40,7 @@ class MotifPredictor_sub_prototype_Memory(nn.Module):
         assert self.num_obj_cls == len(obj_classes)
         assert self.num_rel_cls == len(rel_classes)
         # init contextual lstm encoding
-        self.context_layer = LSTMContext_mp(config, obj_classes, rel_classes, in_channels)
+        self.context_layer = LSTMContext(config, obj_classes, rel_classes, in_channels)
 
         # post decoding
         self.mlp_dim = 4096
