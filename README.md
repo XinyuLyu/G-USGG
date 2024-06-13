@@ -37,9 +37,10 @@ Follow the [instructions](https://github.com/KaihuaTang/Scene-Graph-Benchmark.py
 The trained models(Motif-MCL) on Predcls\SGCLs\SGDet are released as below. 
 
 
-| Predcls                                                                                                                                                           | SGCLs                                                                                                                                                            | SGDet                                                                                                                                                           |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Predcls                                                                          | SGCLs                                                                                                                                                            | SGDet                                                                                                                                                           |
+|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Motif-MCL-Predcls](https://1drv.ms/f/s!Amlnn8hF2cFdgul3oSr1pHfa7eJCKA?e=1czlAO) | [Motif-MCL-SGCLS](https://1drv.ms/f/s!Amlnn8hF2cFdgul5g5ZxuviLtp5YMA?e=JYhsTy) | [Motif-MCL-SGDet](https://1drv.ms/f/s!Amlnn8hF2cFdgul4LohJW7XzV_1SEw?e=YZKlXA) |
+| [PENET-MCL-Predcls](https://1drv.ms/f/s!Amlnn8hF2cFdgus0BONrnahY3OpRCA?e=dm8Wn3) | [PENET-MCL-SGCLS](https://1drv.ms/f/s!Amlnn8hF2cFdgus1a1kaNS_BWL1jjg?e=yyaJut) | [PENET-MCL-SGDet](https://1drv.ms/f/s!Amlnn8hF2cFdgus2w5OHlxVFyNJDyQ?e=eZAkZ8) |
 
 ## Help
 Be free to contact me (xinyulyu68@gmail.com) if you have any questions!

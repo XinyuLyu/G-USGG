@@ -322,23 +322,17 @@ class VectorPredictor_mine_Memory(nn.Module):
 
         obj_embed_vecs = obj_edge_vectors(obj_classes, wv_dir=self.cfg.GLOVE_DIR,
                                           wv_dim=self.embed_dim)  # load Glove for objects
-        rel_embed_vecs = rel_vectors(rel_classes, wv_dir=config.GLOVE_DIR,
-                                     wv_dim=self.embed_dim)  # load Glove for predicates
         self.obj_embed = nn.Embedding(self.num_obj_cls, self.embed_dim)
-        # self.rel_embed = nn.Embedding(self.num_rel_cls, self.embed_dim)
         with torch.no_grad():
             self.obj_embed.weight.copy_(obj_embed_vecs, non_blocking=True)
-            # self.rel_embed.weight.copy_(rel_embed_vecs, non_blocking=True)
 
         # sub-prototype initilization
         self.pred_diversity_list = get_semantic_diversity()
         self.num_sub_proto = int(sum(self.pred_diversity_list))
         self.sub_proto_list = range(self.num_sub_proto)
         self.proto_dim = 300
-        # self.codebook = PQLayer(feat_dim=self.proto_dim, K=self.num_sub_proto)
         self.codebook = PQLayer(feat_dim=self.proto_dim, K=self.num_sub_proto)  # sub-prototype space
 
-        # self.codebook._C = nn.Parameter(torch.randn((self.num_sub_proto, 300)))
         self.predicate_proto = []
         pred_proto_tuple = self.codebook._C.split(self.pred_diversity_list)
         for pred_proto in pred_proto_tuple:
@@ -478,14 +472,6 @@ class VectorPredictor_mine_Memory(nn.Module):
 
                     mem_entity_embeds = self.obj_embed(mem_entity_preds)
 
-                    # num_objs = [len(b) for b in m_proposal_list]
-                    # num_rels = [r.shape[0] for r in m_pair]
-
-                    # mem_sub_reps = mem_sub_rep.split(num_objs, dim=0)
-                    # mem_obj_reps = mem_obj_rep.split(num_objs, dim=0)
-                    # mem_entity_preds = mem_entity_preds.split(num_objs, dim=0)
-                    # mem_entity_embeds = mem_entity_embeds.split(num_objs, dim=0)
-
                     mem_s_embed = self.W_sub(mem_entity_embeds[m_pair[:, 0]])  # Ws x ts
                     mem_o_embed = self.W_obj(mem_entity_embeds[m_pair[:, 1]])  # Wo x to
 
@@ -585,12 +571,10 @@ class VectorPredictor_mine_Memory(nn.Module):
         rel_rep_norm = rel_rep / rel_rep.norm(dim=1, keepdim=True)  # r_norm [N, 4096]
 
         rel_dists_sub = rel_rep_norm @ predicate_proto_sub.t() * self.logits_scale.exp()  # [N,102]
-        rel_dists_sub_gumbel = F.gumbel_softmax(rel_dists_sub, dim=1)
         rel_dists_tuple = rel_dists_sub.split(self.pred_diversity_list, dim=1)  # [N,51,*]
 
         rel_dists = []
         for rel_dist in rel_dists_tuple:
-            # rel_dist_mask = F.softmax(rel_dist.detach() * self.softmax_mask.exp(), dim=1)  # [N,1/2]
             rel_dist_mask = F.softmax(rel_dist.detach() / self.curr_temp, dim=1)
             rel_dist = torch.sum(rel_dist * rel_dist_mask, dim=1)  # [N,1/2]
             rel_dists.append(rel_dist.unsqueeze(dim=1))  # [N,1/2]
