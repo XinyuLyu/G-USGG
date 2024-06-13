@@ -17,7 +17,7 @@ from .utils_relation import layer_init
 from .utils_motifs import obj_edge_vectors, rel_vectors, encode_box_info, nms_overlaps, to_onehot
 from .utils_prototype import ExponentialMovingAverage, NetworkExponentialMovingAverage
 import torch.nn.functional as F
-from .model_transformer import TransformerContext
+
 
 @registry.ROI_RELATION_PREDICTOR.register("MotifPredictor_sub_prototype_Memory")
 class MotifPredictor_sub_prototype_Memory(nn.Module):
