@@ -58,7 +58,7 @@ class MotifPredictor_sub_prototype_Memory(nn.Module):
         self.dropout_rel = nn.Dropout(dropout_p)
         self.dropout_pred = nn.Dropout(dropout_p)
 
-        # self.softmax_mask = nn.Parameter(torch.ones([]) * np.log(100000000000),requires_grad=False)
+
         self.logits_scale = nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
         self.norm_rel_rep = nn.LayerNorm(self.mlp_dim)
         self.dropout_rel_rep = nn.Dropout(dropout_p)
@@ -70,7 +70,7 @@ class MotifPredictor_sub_prototype_Memory(nn.Module):
         self.sub_proto_list = range(self.num_sub_proto)
         self.proto_dim = 300
         self.codebook = PQLayer(feat_dim=self.proto_dim, K=self.num_sub_proto)
-        #self.codebook._C = nn.Parameter(torch.randn((self.num_sub_proto, 300))).cuda()
+
         self.predicate_proto = []
         pred_proto_tuple = self.codebook._C.split(self.pred_diversity_list)
         for pred_proto in pred_proto_tuple:
@@ -80,11 +80,7 @@ class MotifPredictor_sub_prototype_Memory(nn.Module):
         self.negative_mask_sub = torch.ones((self.num_sub_proto, self.num_sub_proto), requires_grad=False).cuda()
         for i in range(307):
             self.negative_mask_sub[i, i] = 0
-        # start = 0
-        # for k in range(len(self.pred_diversity_list)):
-        #     length = self.pred_diversity_list[k]
-        #     self.negative_mask_sub[start:start + length, start:start + length] = 0
-        #     start = start + length
+
         self.negative_mask = torch.ones((self.num_rel_cls, self.num_rel_cls), requires_grad=False).cuda()
         for i in range(self.num_rel_cls):
             self.negative_mask[i, i] = 0
@@ -209,7 +205,6 @@ class MotifPredictor_sub_prototype_Memory(nn.Module):
         rel_dists = []
         for rel_dist in rel_dists_tuple:
             rel_dist_mask = F.softmax(rel_dist.detach() * self.softmax_mask.exp(), dim=1)  # [N,1/2]
-            #rel_dist_mask = F.softmax(rel_dist.detach()/self.curr_temp, dim=1)
             rel_dist = torch.sum(rel_dist * rel_dist_mask, dim=1) # [N,1/2]
             rel_dists.append(rel_dist.unsqueeze(dim=1) )# [N,1/2]
         rel_dists = cat(rel_dists, dim=1)  # [N,51]
@@ -232,19 +227,12 @@ class MotifPredictor_sub_prototype_Memory(nn.Module):
             orthogonalities_sub_general_loss = torch.norm(torch.norm(orthogonalities_sub_general_negative, p=2, dim=1), p=1) / (self.num_rel_cls*self.num_sub_proto)
             add_losses.update({"sub_general_loss": orthogonalities_sub_general_loss})
 
-            # target_predicate_proto = predicate_proto.clone().detach()# [102, 4096]
-            # orthogonalities = predicate_proto @ target_predicate_proto.t()# [102, 102]
-            # orthogonalities_negative = orthogonalities.mul(self.negative_mask)# [102, 51]
-            # orthogonalities_loss_negative = torch.norm(torch.norm(orthogonalities_negative, p=2, dim=1), p=1) / \
-            #                                 (self.num_rel_cls * self.num_rel_cls)
-            # add_losses.update({"p_loss_cs": orthogonalities_loss_negative})
-
             target_predicate_proto_sub = predicate_proto_sub.clone().detach()# [102, 4096]
             orthogonalities_sub = predicate_proto_sub @ target_predicate_proto_sub.t()# [102, 102]
             orthogonalities_sub_negative = orthogonalities_sub.mul(self.negative_mask_sub)# [102, 51]
             orthogonalities_sub_loss_negative = torch.norm(torch.norm(orthogonalities_sub_negative, p=2, dim=1), p=1) / \
                                                 (self.num_sub_proto * self.num_sub_proto)
-            # add_losses.update({"p_sub_loss_cs": orthogonalities_sub_loss_negative})
+            add_losses.update({"p_sub_loss_cs": orthogonalities_sub_loss_negative})
 
             rel_labels_tensor = cat(rel_labels, dim=0)
             rel_rep_list = []
